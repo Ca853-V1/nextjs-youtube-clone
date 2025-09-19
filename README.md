@@ -72,7 +72,7 @@ Create a `.env.local` file in the root:
 ```sh
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
-NEXTAUTH_SECRET=your_nextauth_secret
+NEXTAUTH_SECRET=your_nextauth_secret (generate it using "openssl rand -base64 32")
 ```
 
 ## Future Scope:

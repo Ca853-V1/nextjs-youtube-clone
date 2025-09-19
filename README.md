@@ -1,40 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# YouTube Clone -
 
-## Getting Started
+## Objective:
+A fully functional YouTube clone built with Next.js, TypeScript and TailwindCSS.
 
-First, run the development server:
+## Tech Stack:
+- **Frontend:** Next.js, React, TypeScript
+- **Styling:** Tailwind CSS
+- **Authentication:** NextAuth.js with Google OAuth
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Features:
+- Video Player (watch videos with progress tracking (resets on clicking Home button)).
+- Shorts Player (9:16 aspect ratio with autoplay).
+- Downloads Page (save & manage downloaded videos).
+- Subscriptions Page (subscribe/unsubscribe to channels).
+- Search Bar (filter videos by title).
+
+## Project Structure:
+```
+YouTube-Clone/
+│── src/
+│   ├── auth/                # NextAuth config & authentication logic
+│   │    ├── [...nextauth].ts
+│
+│   ├── data/                # Static data & type definitions
+│   │    ├── video.ts        # Video type + dummy data
+│   │    ├── shorts.ts       # Shorts type + dummy data
+│
+│   ├── components/          # Reusable React components
+│   │    ├── Appbar.tsx          # Top navigation bar
+│   │    ├── Searchbar.tsx       # Search input & handling
+│   │    ├── SidePane.tsx        # Sidebar navigation
+│   │    ├── VideoCard.tsx       # Single video card for home view
+│   │    ├── VideoCardS.tsx      # Single video card for watch page view
+│   │    ├── VideoGrid.tsx       # Grid layout for videos in home page
+│   │    ├── VideoList.tsx       # List layout for videos in watch page
+│
+│   ├── pages/               # Next.js pages (frontend routes)
+│   │    ├── shorts/             # Shorts related pages
+│   │    │    ├── index.tsx      # Shorts feed
+│   │    │    ├── [id].tsx       # Watch a single short
+│   │
+│   │    ├── watch/              # Watch page for videos
+│   │    │    ├── [id].tsx
+│   │
+│   │    ├── downloads.tsx       # User downloads page
+│   │    ├── subscriptions.tsx   # User subscriptions page
+│   │    ├── index.tsx           # Home page
+│   │
+│   │    ├── _app.tsx            # Custom app wrapper
+│
+│── public/                  # Static assets (logos, icons, thumbnails)
+│
+│── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation & Usage:
+### 1) Clone the repository:
+```sh
+git clone https://github.com/Ca853-V1/youtube-clone.git
+npm install  # Install dependencies
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### 2) Frontend Setup:
+```sh
+cd youtube-clone
+npm run dev  # Start frontend development server
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### 3) Environment Variables:
+Create a `.env.local` file in the root:
+```sh
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+NEXTAUTH_SECRET=your_nextauth_secret
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## Future Scope:
+1. **Integrate YouTube Data API**
+   * Fetch real videos, thumbnails, titles, views, and channels instead of using dummy `VIDEOS` data.
+   * Sync watch progress (so that it looks more like real youtube).
+2. **Video Upload & Hosting**
+   * Let users upload their own videos (using AWS S3 or Firebase for storage).
+   * Add a backend to process and store uploaded video metadata.
+3. **Engagement System**
+   * Allow users to add comments under videos/shorts and like/dislike them.
+   * Infinite scrolling for shorts feed.

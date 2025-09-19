@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@reference "../../node_modules/tailwindcss"; /* 👈 make tailwind utilities available */
+
+@layer base {
+  body {
+    @apply bg-black text-white;
+  }
+}

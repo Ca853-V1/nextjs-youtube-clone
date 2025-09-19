@@ -23,10 +23,10 @@ YouTube-Clone/
 │   │    ├── [...nextauth].ts
 │
 │   ├── data/                # Static data & type definitions
-│   │    ├── video.ts        # Video type + dummy data
-│   │    ├── shorts.ts       # Shorts type + dummy data
+│   │    ├── video.ts        # For Videos
+│   │    ├── shorts.ts       # For Shorts
 │
-│   ├── components/          # Reusable React components
+│   ├── components/
 │   │    ├── Appbar.tsx          # Top navigation bar
 │   │    ├── Searchbar.tsx       # Search input & handling
 │   │    ├── SidePane.tsx        # Sidebar navigation
@@ -48,9 +48,7 @@ YouTube-Clone/
 │   │    ├── index.tsx           # Home page
 │   │
 │   │    ├── _app.tsx            # Custom app wrapper
-│
 │── public/                  # Static assets (logos, icons, thumbnails)
-│
 │── README.md
 ```
 
@@ -58,13 +56,13 @@ YouTube-Clone/
 ### 1) Clone the repository:
 ```sh
 git clone https://github.com/Ca853-V1/youtube-clone.git
-npm install  # Install dependencies
 ```
 
-### 2) Frontend Setup:
+### 2) Run the development server:
 ```sh
 cd youtube-clone
-npm run dev  # Start frontend development server
+npm install  # Install dependencies
+npm run dev
 ```
 
 ### 3) Environment Variables:

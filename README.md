@@ -58,19 +58,19 @@ YouTube-Clone/
 git clone https://github.com/Ca853-V1/youtube-clone.git
 ```
 
-### 2) Run the development server:
-```sh
-cd youtube-clone
-npm install  # Install dependencies
-npm run dev
-```
-
-### 3) Environment Variables:
+### 2) Environment Variables:
 Create a `.env.local` file in the root:
 ```sh
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 NEXTAUTH_SECRET=your_nextauth_secret (generate it using "openssl rand -base64 32")
+```
+
+### 3) Run the development server:
+```sh
+cd youtube-clone
+npm install  # Install dependencies
+npm run dev
 ```
 
 ## Future Scope:
